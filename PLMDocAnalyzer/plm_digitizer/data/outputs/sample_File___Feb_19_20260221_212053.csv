@@ -1,0 +1,5 @@
+﻿invoice number,shipment address,Source File,File Type,Confidence Score,Extraction Status,Processing Time (ms),Extraction Method
+INVOICE # 4,"NYU -ISAW
+15 E. 84th St.
+New Yor, NY 10028",Sample Vendor Invoice.pdf,PDF,0.90,passed,53,pdfplumber
+Invoice #123456,,bronze-and-van-cleef-supplier-invoice-invoice-template.jpg,JPG,0.60,failed,2756,pytesseract

@@ -1,0 +1,215 @@
+2026-02-19 11:27:32,502 [INFO] azure_test: ============================================================
+2026-02-19 11:27:32,503 [INFO] azure_test: Azure OpenAI Connection Test
+2026-02-19 11:27:32,504 [INFO] azure_test: ============================================================
+2026-02-19 11:27:32,504 [INFO] azure_test: Raw endpoint   : 'https://demodigitizer.services.ai.azure.com'
+2026-02-19 11:27:32,514 [INFO] azure_test: Normalised     : 'https://demodigitizer.services.ai.azure.com/'
+2026-02-19 11:27:32,515 [INFO] azure_test: Deployment     : 'DemoDigitizer'
+2026-02-19 11:27:32,515 [INFO] azure_test: API version    : '2024-10-21'
+2026-02-19 11:27:32,516 [INFO] azure_test: API key (first 8): BbIFopJk...
+2026-02-19 11:27:32,518 [INFO] azure_test: ----------------------------------------
+2026-02-19 11:27:32,519 [INFO] azure_test: Step 1: DNS resolution
+2026-02-19 11:27:32,590 [INFO] azure_test:   ✓ demodigitizer.services.ai.azure.com resolved to 20.232.91.180
+2026-02-19 11:27:32,591 [INFO] azure_test: ----------------------------------------
+2026-02-19 11:27:32,591 [INFO] azure_test: Step 2: HTTPS connectivity
+2026-02-19 11:27:33,564 [DEBUG] httpcore.connection: connect_tcp.started host='demodigitizer.services.ai.azure.com' port=443 local_address=None timeout=8 socket_options=None
+2026-02-19 11:27:33,739 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018AE699C980>
+2026-02-19 11:27:33,743 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x0000018AE691F260> server_hostname='demodigitizer.services.ai.azure.com' timeout=8
+2026-02-19 11:27:33,950 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018AE6998690>
+2026-02-19 11:27:33,957 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-02-19 11:27:33,961 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-02-19 11:27:33,962 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-02-19 11:27:33,964 [DEBUG] httpcore.http11: send_request_body.complete
+2026-02-19 11:27:33,968 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-02-19 11:27:34,089 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'Service Operational', [(b'Content-Length', b'0'), (b'Content-Type', b'application/json'), (b'Date', b'Thu, 19 Feb 2026 10:27:32 GMT')])
+2026-02-19 11:27:34,091 [INFO] httpx: HTTP Request: GET https://demodigitizer.services.ai.azure.com/ "HTTP/1.1 200 Service Operational"
+2026-02-19 11:27:34,092 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-02-19 11:27:34,093 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-02-19 11:27:34,093 [DEBUG] httpcore.http11: response_closed.started
+2026-02-19 11:27:34,094 [DEBUG] httpcore.http11: response_closed.complete
+2026-02-19 11:27:34,094 [DEBUG] httpcore.connection: close.started
+2026-02-19 11:27:34,095 [DEBUG] httpcore.connection: close.complete
+2026-02-19 11:27:34,096 [INFO] azure_test:   ✓ HTTP 200 from https://demodigitizer.services.ai.azure.com/
+2026-02-19 11:27:34,096 [INFO] azure_test: ----------------------------------------
+2026-02-19 11:27:34,096 [INFO] azure_test: Step 3: Trying 5 API versions with deployment 'DemoDigitizer'
+2026-02-19 11:27:35,988 [INFO] azure_test:   Trying api_version='2024-10-21' ...
+2026-02-19 11:27:37,154 [DEBUG] openai._base_client: Request options: {'method': 'post', 'url': '/deployments/DemoDigitizer/chat/completions', 'headers': {'api-key': '<redacted>'}, 'files': None, 'idempotency_key': 'stainless-python-retry-ed83cc95-8781-4506-9622-93e82745a2b6', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Say the word OK and nothing else.'}], 'model': 'DemoDigitizer', 'max_tokens': 5, 'temperature': 0}}
+2026-02-19 11:27:37,332 [DEBUG] openai._base_client: Sending HTTP Request: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-10-21
+2026-02-19 11:27:37,333 [DEBUG] httpcore.connection: connect_tcp.started host='demodigitizer.services.ai.azure.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-19 11:27:37,431 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018AE8979310>
+2026-02-19 11:27:37,432 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x0000018AE7282CC0> server_hostname='demodigitizer.services.ai.azure.com' timeout=5.0
+2026-02-19 11:27:37,644 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018AE8745CD0>
+2026-02-19 11:27:37,646 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+2026-02-19 11:27:37,647 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-02-19 11:27:37,648 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'POST']>
+2026-02-19 11:27:37,649 [DEBUG] httpcore.http11: send_request_body.complete
+2026-02-19 11:27:37,649 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+2026-02-19 11:27:37,757 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'DeploymentNotFound', [(b'Content-Length', b'197'), (b'Content-Type', b'application/json'), (b'apim-request-id', b'5e290f20-5f8a-45df-8a5d-fe6d5d0f00eb'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'x-content-type-options', b'nosniff'), (b'x-ms-region', b'East US'), (b'Date', b'Thu, 19 Feb 2026 10:27:36 GMT')])
+2026-02-19 11:27:37,759 [INFO] httpx: HTTP Request: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-10-21 "HTTP/1.1 404 DeploymentNotFound"
+2026-02-19 11:27:37,759 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+2026-02-19 11:27:37,761 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-02-19 11:27:37,761 [DEBUG] httpcore.http11: response_closed.started
+2026-02-19 11:27:37,761 [DEBUG] httpcore.http11: response_closed.complete
+2026-02-19 11:27:37,762 [DEBUG] openai._base_client: HTTP Response: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-10-21 "404 DeploymentNotFound" Headers({'content-length': '197', 'content-type': 'application/json', 'apim-request-id': '5e290f20-5f8a-45df-8a5d-fe6d5d0f00eb', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'x-ms-region': 'East US', 'date': 'Thu, 19 Feb 2026 10:27:36 GMT'})
+2026-02-19 11:27:37,763 [DEBUG] openai._base_client: request_id: None
+2026-02-19 11:27:37,763 [DEBUG] openai._base_client: Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "C:\Users\ssath\AppData\Roaming\Python\Python313\site-packages\openai\_base_client.py", line 1050, in request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ssath\AppData\Roaming\Python\Python313\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 DeploymentNotFound' for url 'https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-10-21'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-02-19 11:27:37,855 [DEBUG] openai._base_client: Not retrying
+2026-02-19 11:27:37,856 [DEBUG] openai._base_client: Re-raising status error
+2026-02-19 11:27:37,857 [WARNING] azure_test:   ✗ FAILED with '2024-10-21': Error code: 404 - {'error': {'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}
+2026-02-19 11:27:37,858 [INFO] azure_test:   Trying api_version='2024-06-01' ...
+2026-02-19 11:27:38,288 [DEBUG] openai._base_client: Request options: {'method': 'post', 'url': '/deployments/DemoDigitizer/chat/completions', 'headers': {'api-key': '<redacted>'}, 'files': None, 'idempotency_key': 'stainless-python-retry-0379031d-d8c3-45b6-92dd-30c11ab2a27d', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Say the word OK and nothing else.'}], 'model': 'DemoDigitizer', 'max_tokens': 5, 'temperature': 0}}
+2026-02-19 11:27:38,289 [DEBUG] openai._base_client: Sending HTTP Request: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-06-01
+2026-02-19 11:27:38,290 [DEBUG] httpcore.connection: connect_tcp.started host='demodigitizer.services.ai.azure.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-19 11:27:38,392 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018AE8746520>
+2026-02-19 11:27:38,393 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x0000018AE8903E30> server_hostname='demodigitizer.services.ai.azure.com' timeout=5.0
+2026-02-19 11:27:38,604 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018AE897CCB0>
+2026-02-19 11:27:38,605 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+2026-02-19 11:27:38,606 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-02-19 11:27:38,606 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'POST']>
+2026-02-19 11:27:38,607 [DEBUG] httpcore.http11: send_request_body.complete
+2026-02-19 11:27:38,607 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+2026-02-19 11:27:38,722 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'DeploymentNotFound', [(b'Content-Length', b'197'), (b'Content-Type', b'application/json'), (b'apim-request-id', b'cdb9671c-cfbf-4444-aaa6-b185eeca84b3'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'x-content-type-options', b'nosniff'), (b'x-ms-region', b'East US'), (b'Date', b'Thu, 19 Feb 2026 10:27:38 GMT')])
+2026-02-19 11:27:38,723 [INFO] httpx: HTTP Request: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-06-01 "HTTP/1.1 404 DeploymentNotFound"
+2026-02-19 11:27:38,724 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+2026-02-19 11:27:38,724 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-02-19 11:27:38,725 [DEBUG] httpcore.http11: response_closed.started
+2026-02-19 11:27:38,725 [DEBUG] httpcore.http11: response_closed.complete
+2026-02-19 11:27:38,726 [DEBUG] openai._base_client: HTTP Response: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-06-01 "404 DeploymentNotFound" Headers({'content-length': '197', 'content-type': 'application/json', 'apim-request-id': 'cdb9671c-cfbf-4444-aaa6-b185eeca84b3', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'x-ms-region': 'East US', 'date': 'Thu, 19 Feb 2026 10:27:38 GMT'})
+2026-02-19 11:27:38,727 [DEBUG] openai._base_client: request_id: None
+2026-02-19 11:27:38,727 [DEBUG] openai._base_client: Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "C:\Users\ssath\AppData\Roaming\Python\Python313\site-packages\openai\_base_client.py", line 1050, in request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ssath\AppData\Roaming\Python\Python313\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 DeploymentNotFound' for url 'https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-06-01'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-02-19 11:27:38,729 [DEBUG] openai._base_client: Not retrying
+2026-02-19 11:27:38,730 [DEBUG] openai._base_client: Re-raising status error
+2026-02-19 11:27:38,731 [WARNING] azure_test:   ✗ FAILED with '2024-06-01': Error code: 404 - {'error': {'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}
+2026-02-19 11:27:38,731 [INFO] azure_test:   Trying api_version='2024-05-01-preview' ...
+2026-02-19 11:27:39,144 [DEBUG] openai._base_client: Request options: {'method': 'post', 'url': '/deployments/DemoDigitizer/chat/completions', 'headers': {'api-key': '<redacted>'}, 'files': None, 'idempotency_key': 'stainless-python-retry-00fab7e5-0dc9-4887-8cae-893403d791e2', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Say the word OK and nothing else.'}], 'model': 'DemoDigitizer', 'max_tokens': 5, 'temperature': 0}}
+2026-02-19 11:27:39,145 [DEBUG] openai._base_client: Sending HTTP Request: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-05-01-preview
+2026-02-19 11:27:39,145 [DEBUG] httpcore.connection: connect_tcp.started host='demodigitizer.services.ai.azure.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-19 11:27:39,247 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018AE88D67A0>
+2026-02-19 11:27:39,248 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x0000018AE8903F50> server_hostname='demodigitizer.services.ai.azure.com' timeout=5.0
+2026-02-19 11:27:39,456 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018AE88D6AD0>
+2026-02-19 11:27:39,457 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+2026-02-19 11:27:39,458 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-02-19 11:27:39,458 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'POST']>
+2026-02-19 11:27:39,459 [DEBUG] httpcore.http11: send_request_body.complete
+2026-02-19 11:27:39,459 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+2026-02-19 11:27:39,576 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'DeploymentNotFound', [(b'Content-Length', b'197'), (b'Content-Type', b'application/json'), (b'apim-request-id', b'e5e65e3f-ed4f-4802-b416-3e564d6d81e9'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'x-content-type-options', b'nosniff'), (b'x-ms-region', b'East US'), (b'Date', b'Thu, 19 Feb 2026 10:27:38 GMT')])
+2026-02-19 11:27:39,577 [INFO] httpx: HTTP Request: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-05-01-preview "HTTP/1.1 404 DeploymentNotFound"
+2026-02-19 11:27:39,578 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+2026-02-19 11:27:39,579 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-02-19 11:27:39,579 [DEBUG] httpcore.http11: response_closed.started
+2026-02-19 11:27:39,579 [DEBUG] httpcore.http11: response_closed.complete
+2026-02-19 11:27:39,580 [DEBUG] openai._base_client: HTTP Response: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-05-01-preview "404 DeploymentNotFound" Headers({'content-length': '197', 'content-type': 'application/json', 'apim-request-id': 'e5e65e3f-ed4f-4802-b416-3e564d6d81e9', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'x-ms-region': 'East US', 'date': 'Thu, 19 Feb 2026 10:27:38 GMT'})
+2026-02-19 11:27:39,580 [DEBUG] openai._base_client: request_id: None
+2026-02-19 11:27:39,581 [DEBUG] openai._base_client: Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "C:\Users\ssath\AppData\Roaming\Python\Python313\site-packages\openai\_base_client.py", line 1050, in request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ssath\AppData\Roaming\Python\Python313\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 DeploymentNotFound' for url 'https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-05-01-preview'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-02-19 11:27:39,583 [DEBUG] openai._base_client: Not retrying
+2026-02-19 11:27:39,583 [DEBUG] openai._base_client: Re-raising status error
+2026-02-19 11:27:39,584 [WARNING] azure_test:   ✗ FAILED with '2024-05-01-preview': Error code: 404 - {'error': {'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}
+2026-02-19 11:27:39,584 [INFO] azure_test:   Trying api_version='2024-02-01' ...
+2026-02-19 11:27:39,995 [DEBUG] openai._base_client: Request options: {'method': 'post', 'url': '/deployments/DemoDigitizer/chat/completions', 'headers': {'api-key': '<redacted>'}, 'files': None, 'idempotency_key': 'stainless-python-retry-2cbac941-37c4-4a30-a05d-a4d9588a940b', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Say the word OK and nothing else.'}], 'model': 'DemoDigitizer', 'max_tokens': 5, 'temperature': 0}}
+2026-02-19 11:27:39,997 [DEBUG] openai._base_client: Sending HTTP Request: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-02-01
+2026-02-19 11:27:39,997 [DEBUG] httpcore.connection: connect_tcp.started host='demodigitizer.services.ai.azure.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-19 11:27:40,114 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018AE898AB50>
+2026-02-19 11:27:40,115 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x0000018AE8903EC0> server_hostname='demodigitizer.services.ai.azure.com' timeout=5.0
+2026-02-19 11:27:40,319 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018AE898B150>
+2026-02-19 11:27:40,320 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+2026-02-19 11:27:40,321 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-02-19 11:27:40,321 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'POST']>
+2026-02-19 11:27:40,322 [DEBUG] httpcore.http11: send_request_body.complete
+2026-02-19 11:27:40,322 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+2026-02-19 11:27:40,421 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'DeploymentNotFound', [(b'Content-Length', b'197'), (b'Content-Type', b'application/json'), (b'apim-request-id', b'82acef80-b692-4bce-8775-e89a6528d40a'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'x-content-type-options', b'nosniff'), (b'x-ms-region', b'East US'), (b'Date', b'Thu, 19 Feb 2026 10:27:39 GMT')])
+2026-02-19 11:27:40,424 [INFO] httpx: HTTP Request: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-02-01 "HTTP/1.1 404 DeploymentNotFound"
+2026-02-19 11:27:40,426 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+2026-02-19 11:27:40,429 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-02-19 11:27:40,431 [DEBUG] httpcore.http11: response_closed.started
+2026-02-19 11:27:40,432 [DEBUG] httpcore.http11: response_closed.complete
+2026-02-19 11:27:40,433 [DEBUG] openai._base_client: HTTP Response: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-02-01 "404 DeploymentNotFound" Headers({'content-length': '197', 'content-type': 'application/json', 'apim-request-id': '82acef80-b692-4bce-8775-e89a6528d40a', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'x-ms-region': 'East US', 'date': 'Thu, 19 Feb 2026 10:27:39 GMT'})
+2026-02-19 11:27:40,435 [DEBUG] openai._base_client: request_id: None
+2026-02-19 11:27:40,437 [DEBUG] openai._base_client: Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "C:\Users\ssath\AppData\Roaming\Python\Python313\site-packages\openai\_base_client.py", line 1050, in request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ssath\AppData\Roaming\Python\Python313\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 DeploymentNotFound' for url 'https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2024-02-01'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-02-19 11:27:40,439 [DEBUG] openai._base_client: Not retrying
+2026-02-19 11:27:40,441 [DEBUG] openai._base_client: Re-raising status error
+2026-02-19 11:27:40,445 [WARNING] azure_test:   ✗ FAILED with '2024-02-01': Error code: 404 - {'error': {'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}
+2026-02-19 11:27:40,446 [INFO] azure_test:   Trying api_version='2025-01-01-preview' ...
+2026-02-19 11:27:40,859 [DEBUG] openai._base_client: Request options: {'method': 'post', 'url': '/deployments/DemoDigitizer/chat/completions', 'headers': {'api-key': '<redacted>'}, 'files': None, 'idempotency_key': 'stainless-python-retry-aa6a22f3-6dc5-4e2d-9d9f-3a5561302b74', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Say the word OK and nothing else.'}], 'model': 'DemoDigitizer', 'max_tokens': 5, 'temperature': 0}}
+2026-02-19 11:27:40,860 [DEBUG] openai._base_client: Sending HTTP Request: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2025-01-01-preview
+2026-02-19 11:27:40,860 [DEBUG] httpcore.connection: connect_tcp.started host='demodigitizer.services.ai.azure.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-19 11:27:40,961 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018AE8A24410>
+2026-02-19 11:27:40,962 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x0000018AE8A20050> server_hostname='demodigitizer.services.ai.azure.com' timeout=5.0
+2026-02-19 11:27:41,165 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018AE8A24500>
+2026-02-19 11:27:41,165 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+2026-02-19 11:27:41,167 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-02-19 11:27:41,169 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'POST']>
+2026-02-19 11:27:41,170 [DEBUG] httpcore.http11: send_request_body.complete
+2026-02-19 11:27:41,170 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+2026-02-19 11:27:41,282 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'DeploymentNotFound', [(b'Content-Length', b'197'), (b'Content-Type', b'application/json'), (b'apim-request-id', b'77930243-f372-4c20-953b-2fe2636cadb1'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'x-content-type-options', b'nosniff'), (b'x-ms-region', b'East US'), (b'Date', b'Thu, 19 Feb 2026 10:27:40 GMT')])
+2026-02-19 11:27:41,283 [INFO] httpx: HTTP Request: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 404 DeploymentNotFound"
+2026-02-19 11:27:41,284 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+2026-02-19 11:27:41,285 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-02-19 11:27:41,286 [DEBUG] httpcore.http11: response_closed.started
+2026-02-19 11:27:41,286 [DEBUG] httpcore.http11: response_closed.complete
+2026-02-19 11:27:41,287 [DEBUG] openai._base_client: HTTP Response: POST https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2025-01-01-preview "404 DeploymentNotFound" Headers({'content-length': '197', 'content-type': 'application/json', 'apim-request-id': '77930243-f372-4c20-953b-2fe2636cadb1', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'x-ms-region': 'East US', 'date': 'Thu, 19 Feb 2026 10:27:40 GMT'})
+2026-02-19 11:27:41,287 [DEBUG] openai._base_client: request_id: None
+2026-02-19 11:27:41,288 [DEBUG] openai._base_client: Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "C:\Users\ssath\AppData\Roaming\Python\Python313\site-packages\openai\_base_client.py", line 1050, in request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ssath\AppData\Roaming\Python\Python313\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 DeploymentNotFound' for url 'https://demodigitizer.services.ai.azure.com/openai/deployments/DemoDigitizer/chat/completions?api-version=2025-01-01-preview'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-02-19 11:27:41,289 [DEBUG] openai._base_client: Not retrying
+2026-02-19 11:27:41,290 [DEBUG] openai._base_client: Re-raising status error
+2026-02-19 11:27:41,291 [WARNING] azure_test:   ✗ FAILED with '2025-01-01-preview': Error code: 404 - {'error': {'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}
+2026-02-19 11:27:41,291 [INFO] azure_test: ============================================================
+2026-02-19 11:27:41,292 [ERROR] azure_test: ✗ ALL VERSIONS FAILED
+2026-02-19 11:27:41,292 [ERROR] azure_test:   Things to check:
+2026-02-19 11:27:41,292 [ERROR] azure_test:   1. Deployment name — go to Azure AI Foundry → Deployments tab
+2026-02-19 11:27:41,293 [ERROR] azure_test:      and copy the exact name from the 'Name' column
+2026-02-19 11:27:41,294 [ERROR] azure_test:   2. API key — use Key 1 or Key 2 from Azure Portal →
+2026-02-19 11:27:41,294 [ERROR] azure_test:      Your resource → Keys and Endpoint
+2026-02-19 11:27:41,294 [ERROR] azure_test:   3. Endpoint — use the base URL, e.g.
+2026-02-19 11:27:41,295 [ERROR] azure_test:      https://YOUR-RESOURCE.openai.azure.com/
+2026-02-19 11:27:41,295 [ERROR] azure_test:      or https://YOUR-RESOURCE.services.ai.azure.com/
+2026-02-19 11:27:41,295 [ERROR] azure_test:   Full log saved to: data/azure_test.log
+2026-02-19 11:27:41,296 [INFO] azure_test: ============================================================
+2026-02-19 11:27:41,382 [DEBUG] httpcore.connection: close.started
+2026-02-19 11:27:41,384 [DEBUG] httpcore.connection: close.complete
+2026-02-19 11:27:41,384 [DEBUG] httpcore.connection: close.started
+2026-02-19 11:27:41,385 [DEBUG] httpcore.connection: close.complete
+2026-02-19 11:27:41,386 [DEBUG] httpcore.connection: close.started
+2026-02-19 11:27:41,387 [DEBUG] httpcore.connection: close.complete
+2026-02-19 11:27:41,387 [DEBUG] httpcore.connection: close.started
+2026-02-19 11:27:41,388 [DEBUG] httpcore.connection: close.complete
+2026-02-19 11:27:41,389 [DEBUG] httpcore.connection: close.started
+2026-02-19 11:27:41,389 [DEBUG] httpcore.connection: close.complete

@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(pip index:*)",
+      "Bash(# Check which other pinned packages may not support Python 3.13 pip index versions pdfplumber)",
+      "Bash(.venvScriptspython.exe --version)",
+      "Bash(Start-Process -NoNewWindow -FilePath \".venv\\\\Scripts\\\\python.exe\" -ArgumentList \"main.py\" -RedirectStandardOutput \"data\\\\server.log\" -RedirectStandardError \"data\\\\server_err.log\")",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(netstat:*)",
+      "Bash(taskkill //F //PID 36820)",
+      "Bash(.venv/Scripts/python.exe:*)",
+      "Bash(xargs:*)",
+      "Bash(sqlite3:*)",
+      "Bash(del \"F:\\\\Claude-Code\\\\Project2\\\\plm_digitizer\\\\fix_theme.py\")",
+      "Bash(findstr:*)",
+      "Bash(dir:*)",
+      "Bash(del \"F:\\\\Claude-Code\\\\Project2\\\\plm_digitizer\\\\svg_replace.py\")",
+      "Bash(del \"F:\\\\Claude-Code\\\\Project2\\\\plm_digitizer\\\\svg_fix2.py\")",
+      "Bash(powershell -Command \"Get-ChildItem ''F:\\\\Claude-Code\\\\Project2\\\\plm_digitizer'' -Filter ''*.py'' -File | Select-Object Name\")",
+      "Bash(powershell -Command \"Get-ChildItem ''F:\\\\Claude-Code\\\\Project2\\\\plm_digitizer\\\\services'' -Filter ''*.py'' -File | Select-Object Name\")",
+      "Bash(powershell:*)",
+      "Bash(node --check:*)",
+      "Bash(del \"F:\\\\Claude-Code\\\\Project2\\\\plm_digitizer\\\\temp_check.js\")",
+      "Bash(del:*)"
+    ]
+  }
+}

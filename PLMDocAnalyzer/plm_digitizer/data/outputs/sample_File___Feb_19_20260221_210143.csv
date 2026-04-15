@@ -1,0 +1,2 @@
+﻿invoice date,vendor address,Source File,File Type,Confidence Score,Extraction Status,Processing Time (ms),Extraction Method
+"July 8, 2011","ANYTOWN, USA 00000",Sample Vendor Invoice.pdf,PDF,0.94,passed,128,pdfplumber

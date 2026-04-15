@@ -1,0 +1,2 @@
+﻿vendor adress,invoice date,Source File,File Type,Confidence Score,Extraction Status,Processing Time (ms),Extraction Method
+,"July 8, 2011",Sample Vendor Invoice.pdf,PDF,0.92,passed,516,pdfplumber

@@ -1,0 +1,2 @@
+﻿invoice date,vendor address,Source File,File Type,Confidence Score,Extraction Status,Processing Time (ms),Extraction Method
+,,Sample Vendor Invoice.pdf,PDF,0.00,failed,1404,pdfplumber
